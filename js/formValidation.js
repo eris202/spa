@@ -4,7 +4,7 @@ for (q = 0; q < formInput.length; q++) {
   formInput[q].addEventListener("keyup", function() {
     if (this.getAttribute("placeholder") == "Full Name") {
       if (this.value.length >= 5) {
-        this.nextElementSibling.innerHTML = "Enter at least 5 characters";
+        this.nextElementSibling.innerHTML = "Enter at least 5 DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD characters";
         this.nextElementSibling.style = "color:#f00";
       } else {
         this.nextElementSibling.innerHTML = "Success";
