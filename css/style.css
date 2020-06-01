@@ -1,7 +1,12 @@
+@font-face{
+  font-family: "Sofia Pro";
+  src: url("../font/SofiaProRegular.ttf")
+}
 body {
   width: 100vw;
   margin: 0;
   padding: 0;
+  font-family: "Sofia Pro";
   overflow-x: hidden;
 }
 .portfolio-info {
@@ -59,9 +64,54 @@ body {
 .aside-menu {
   background: #17181b;
   max-height: 750px;
-  position: fixed;
-  /* z-index: 9;  */
+position: sticky;  
 }
+.t-stch{
+  width: 70px;
+  border: 2px solid #eeeeee;
+  padding: 3px 3px 3px 3px;
+  margin-top:39px;
+  height: 25px;
+  border-radius: 20px;
+  position: relative;
+  transition: all .5s ease-in-out;
+}
+
+.t-stch > div{
+  position: absolute;
+  width: 50%;
+  height: 15px;
+  background: #17181b;
+  border-radius: 20px;
+  transition: all .5s ease-in-out;
+}
+.ipt:checked + .t-stch{
+background: #17181b;
+}
+.t-stch::after{
+  position: absolute;
+  font-size: 12px;
+  width: 100px;
+  left: -20px;
+  top: -50px;
+  z-index: 40;
+content: "Change to light mode"
+}
+.ipt:checked +.t-stch::after{
+  position: absolute;
+  font-size: 12px;
+  width: 100px;
+  left: -20px;
+  top: -50px;
+  z-index: 40;
+content: "Change to dark mode"
+}
+ .ipt:checked + .t-stch> div{
+ 
+  transition: all .5s ease-in-out;
+  right:4px !important;
+  background: #fff;
+  }
 .setting-color {
   cursor: pointer;
 }
@@ -379,6 +429,10 @@ a:focus {
   overflow: hidden;
   transition: margin-left 0.2s ease-in-out;
 }
+.overscroll:hover{
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
 
 .t-port-type {
   width: 100px;
@@ -396,13 +450,13 @@ a:focus {
   transform: scale(0);
 }
 .t-port-type::after {
-  content: "scratch";
+  content: "All Project";
 }
 .list-itm.prjt3.ll ~ .t-port-type::after {
-  content: "All Design";
+  content: "Develop";
 }
 .list-itm.prjt2.ll ~ .t-port-type::after {
-  content: "Wordpress";
+  content: "Design";
 }
 input,
 textarea {
@@ -569,6 +623,29 @@ button {
 }
 .show {
   display: block;
+}
+.aside-menu.light-bg{
+  background: transparent;
+}
+.bg-gray.light-bg{
+  background: #eeeeee;
+  color: #555;
+}
+
+.hed1.light-bg,.abt-title.light-bg{
+  color: #000;
+}
+.d-m.light-bg::before,.d-m.light-bg::after,.demacate.light-bg::before,.demacate.light-bg::after{
+  border-color:#555;
+}
+.abt-title.light-bg:after{
+  border-color:transparent transparent transparent #17181b;
+}
+.sub-hed1.light-bg,.hed-sm.light-bg{
+  color:#17181b;
+}
+.dl.ll{
+  color:#000 !important;
 }
 @media (max-width: 768px) {
   .hed {
