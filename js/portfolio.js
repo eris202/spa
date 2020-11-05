@@ -38,17 +38,28 @@ function cancelButton() {
 }
 
 // slider for next and previous
+var getSlidingDiv=document.querySelectorAll(".portfolio__cont");
+var getSlidingDivWidth=document.querySelector(".portfolio__cont").clientWidth;
+var getParentWidth= getSlidingDivWidth* parseInt(getSlidingDiv)
+console.log(getSlidingDivWidth)
+console.log(getParentWidth)
+console.log(getSlidingDiv.length)
 var position = 0;
 function next(next) {
-  position += -217;
+  if(position>2){
+
+  }
+  else{
+    position += -217;
   next.style = "margin-left:" + position + "px";
+  console.log(position)
+  }
 }
 function previous(previous) {
   position += 217;
   if (position > 0) {
     position = 0;
   } else {
-    console.log(position);
     previous.style = "margin-left:" + position + "px";
   }
 }

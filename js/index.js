@@ -9,3 +9,6 @@ for (i in getAllLi) {
       .scrollIntoView({ behavior: "smooth" });
   }
 }
+
+
+
